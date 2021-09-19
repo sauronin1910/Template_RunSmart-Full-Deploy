@@ -1,0 +1,11 @@
+@import '../base/variables.scss';
+* {
+   font-family: 'MuseoModerno', cursive;
+}
+.div {
+   width: 300px;
+   height: 300px;
+   color: $main-color;
+}
+
+
