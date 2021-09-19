@@ -1,0 +1,14 @@
+@import 'base/vars.scss';
+
+* {
+   font-family: 'MuseoModerno', cursive;
+}
+
+.container {
+   max-width: 940px;
+   margin: 0 auto;
+}
+@import 'blocks/promo.scss';
+@import 'blocks/header.scss';
+@import 'blocks/buttons';
+
