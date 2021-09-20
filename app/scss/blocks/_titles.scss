@@ -1,0 +1,38 @@
+  .title {
+     margin: 0;
+     font-weight: 700;
+     font-size: 30px;
+     text-align: center;
+     color: #0D0D0D;
+     text-transform: uppercase;
+     &_left {
+        font-weight: bold;
+        font-size: 36px;
+        color: #FFFFFF;
+        text-align: left;
+        line-height: 54px;
+     }
+  }
+  @media (max-width: 991px) {
+     .title {
+        &_left {
+           text-align: center;
+        }
+     }
+  }
+
+  @media (max-width: 767px) {
+     .title {
+        &_left {
+            font-size: 32px;
+        }
+     }
+  }
+
+  @media (max-width: 568px) {
+     .title {
+        &_left {
+           font-size: 28px;
+        }
+     }
+  }
