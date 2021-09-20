@@ -1,5 +1,5 @@
 .advantages {
-   max-height: 472px;
+   min-height: 400px;
    padding: 75px 0 64px 0;
    background-color: #F6F6F6;
    &__header {
@@ -41,6 +41,45 @@
       color: #0D0D0D;
       &__descr:first-of-type {
          width: 250px;
+      }
+   }
+}
+
+@media (max-width: 1199px) {}
+
+@media (max-width: 991px) {
+ .advantages {
+    &__icons {
+       width: 30%;
+ }
+}
+}
+
+@media (max-width: 767px) {
+   .advantages {
+      &__wrapper {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__icons {
+         margin-top: 30px;
+         width: 60%;
+
+         img {
+            width: 70px;
+            height: 70px;
+            display: block;
+            margin: 0 auto;
+         }
+      }
+      &__text {
+         margin-top: 15px;
+      }
+      &__descr {
+         br {
+            display: none;
+         }
       }
    }
 }

@@ -13,7 +13,7 @@ const server = () => {
   browserSync.init({
     server: { baseDir: "app/" },
     notify: false,
-    online: true,
+    // online: true,
   });
 };
 

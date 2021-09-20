@@ -18,3 +18,14 @@
    }
 
 }
+@media (max-width: 575px) {
+   .button{
+      margin: 0 auto;
+      margin-top: 10px;
+      width: 70%;
+      &_main {
+         width: 70%;
+         margin-top: 34px;
+      }
+   }
+}

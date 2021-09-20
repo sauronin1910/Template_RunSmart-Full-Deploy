@@ -1,5 +1,5 @@
 .promo {
-   max-height: 650px;
+   min-height: 500px;
    padding: 21px 0 96px 0;
    background: url("../img/src/bg/bg_1.jpg") center (center/cover) no-repeat;
    &__wrapper {
@@ -55,6 +55,61 @@
          text-decoration-line: underline;
          text-transform: uppercase;
          color: #FFFFFF;
+      }
+   }
+}
+
+
+@media (max-width: 991px) {
+  .promo {
+      &__wrapper {
+         align-items: center;
+
+      }
+  }
+}
+@media (max-width: 767px) {
+  .promo {
+     &__header {
+        font-size: 38px;
+     }
+     &__subheader {
+        font-size: 20px;
+     }
+}
+}
+@media (max-width: 575px) {
+   .promo {
+
+      &__wrapper {
+             margin-top: 12px;
+      }
+      &__header {
+         width: 100%;
+         font-size: 28px;
+         text-align: center;
+      }
+
+      &__subheader {
+         width: 100%;
+         font-size: 15px;
+         text-align: center;
+      }
+   &__icons {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+   }
+   &__icon {
+      margin-top: 15px;
+      width: 100px;
+      img {
+
+         margin-bottom: 5px;
+         width: 55%;
+      }
       }
    }
 }
