@@ -8,7 +8,11 @@
    max-width: 940px;
    margin: 0 auto;
 }
+// promo
 @import 'blocks/promo.scss';
+// header
 @import 'blocks/header.scss';
+// buttons 
 @import 'blocks/buttons';
-
+// advantages
+@import 'blocks/advantages';
