@@ -1,15 +1,15 @@
 const { src, dest, parallel, series, watch } = require("gulp");
 
-const browserSync   = require("browser-sync").create(),
-      plumber       = require("gulp-plumber"),
-      sass          = require("gulp-sass")(require("sass")),
-      concat        = require("gulp-concat"),
-      autoprefixer  = require("gulp-autoprefixer"),
-      uglify        = require("gulp-uglify-es").default,
-      imagemin      = require("gulp-imagemin"),
-      image         = require('gulp-image'),
-      changed       = require("gulp-changed"),
-      del           = require("del");
+const browserSync = require("browser-sync").create(),
+  plumber = require("gulp-plumber"),
+  sass = require("gulp-sass")(require("sass")),
+  concat = require("gulp-concat"),
+  autoprefixer = require("gulp-autoprefixer"),
+  uglify = require("gulp-uglify-es").default,
+  imagemin = require("gulp-imagemin"),
+  image = require("gulp-image"),
+  changed = require("gulp-changed"),
+  del = require("del");
 
 const server = () => {
   browserSync.init({
@@ -34,8 +34,8 @@ const styles = () => {
 const scripts = () => {
   return src("app/js/src/*.js")
     .pipe(plumber())
-    .pipe(concat("script.min.js"))
     .pipe(uglify())
+    .pipe(concat("script.min.js"))
     .pipe(dest("app/js/dest"))
     .pipe(browserSync.stream());
 };
@@ -53,9 +53,11 @@ const img = () => {
         }),
       ])
     )
-    .pipe(image({
-      svgo: false
-    }))
+    .pipe(
+      image({
+        svgo: false,
+      })
+    )
     .pipe(dest("app/img/dest"));
 };
 
@@ -86,12 +88,12 @@ const watcher = () => {
   watch("app/img/src/**/*", img);
 };
 
-exports.server      = server;
-exports.scripts     = scripts;
-exports.styles      = styles;
-exports.img         = img;
-exports.distBuild   = distBuild;
-exports.cleanImg    = cleanImg;
-exports.cleanBuild  = cleanBuild;
-exports.build       = series(cleanBuild, styles, scripts, img, distBuild);
-exports.default     = parallel(server, styles, scripts, watcher);
+exports.server = server;
+exports.scripts = scripts;
+exports.styles = styles;
+exports.img = img;
+exports.distBuild = distBuild;
+exports.cleanImg = cleanImg;
+exports.cleanBuild = cleanBuild;
+exports.build = series(cleanBuild, styles, scripts, img, distBuild);
+exports.default = parallel(server, styles, scripts, watcher);

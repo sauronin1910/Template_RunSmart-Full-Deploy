@@ -2,6 +2,8 @@
 @import 'base/vars.scss';
 // reset 
 @import 'base/reset';
+//  Slick/slider
+@import 'base/slick.scss';
 
 * {
    font-family: 'MuseoModerno', cursive;
@@ -24,5 +26,7 @@
 //Titles 
 @import 'blocks/titles';
 // forms 
-@import 'blocks/forms'
+@import 'blocks/forms';
+// Section Carousel
+@import 'blocks/carousel';
 
