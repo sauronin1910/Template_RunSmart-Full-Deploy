@@ -22,9 +22,36 @@
       left: auto;
    }
    .slick-dots {
-      list-style-type: disc;
-      .slick-active {
-         color: red;
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      & button {
+         font-size: 0;
+         width: 10px;
+         height: 10px;
+         background-color: #000;
+         border-radius: 50%;
+         margin: 0 10px;
+         transition: all 0.3s;    
       }
+      .slick-active button {
+         background-color: $main-color;
+         border: 1px solid #000;
+      }   
    }
+}
+
+@media (max-width: 992px) {
+   .carousel {
+      &__inner {
+         width: 90%;
+
+         position: relative;
+         img {
+            display: block;
+            margin: 0 auto;
+         }
+   
+      }
+}
 }
