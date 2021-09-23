@@ -3,7 +3,8 @@
 // reset 
 @import 'base/reset';
 //  Slick/slider
-@import 'base/slick.scss';
+// @import 'base/slick.scss';
+
 
 * {
    font-family: 'MuseoModerno', cursive;
@@ -29,4 +30,8 @@
 @import 'blocks/forms';
 // Section Carousel
 @import 'blocks/carousel';
+// sviper 
+@import 'base/swiper-bundle';
+
+
 

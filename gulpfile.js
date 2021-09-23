@@ -32,7 +32,7 @@ const styles = () => {
 };
 
 const scripts = () => {
-  return src("app/js/src/*.js")
+  return src("app/js/src/**/*.js")
     .pipe(plumber())
     .pipe(uglify())
     .pipe(concat("script.min.js"))
