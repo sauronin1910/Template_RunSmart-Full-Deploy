@@ -41,7 +41,13 @@
         width: 300px;
 
         input {
+         display: block;
+         margin: 10px auto;
            width: 90%;
+        }
+        button {
+               display: block;
+               margin: 10px auto;
         }
 }
 }
