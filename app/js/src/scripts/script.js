@@ -1,5 +1,5 @@
 const swiper = new Swiper(".carousel__container", {
-  autoHeight: true,
+  // autoHeight: true,
   spaceBetween: 20,
   loop: true,
   //   loopFillGroupWithBlank: true,
