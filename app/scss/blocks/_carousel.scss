@@ -1,67 +1,77 @@
-// .carousel {
-//    padding: 81px 0;
-//    &__inner {
-//       width: 750px;
-//       margin: 0 auto;
-//       position: relative;
-
-//    }
-//    .slick-prev, .slick-next {
-//       position: absolute;
-//       top: 50%;
-//       transform: translateY(-50%);
-//       left: -66px;
-//       background-color: #fff;
-//       img {
-//          width: 30px;
-//          height: 50px;
-//       } 
-//    }
-//    .slick-next {
-//       right: -66px;
-//       left: auto;
-//    }
-//    .slick-dots {
-//       display: flex;
-//       justify-content: center;
-//       list-style-type: none;
-//       & button {
-//          font-size: 0;
-//          width: 10px;
-//          height: 10px;
-//          background-color: #000;
-//          border-radius: 50%;
-//          margin: 0 10px;
-//          transition: all 0.3s;    
-//       }
-//       .slick-active button {
-//          background-color: $main-color;
-//          border: 1px solid #000;
-//       }   
-//    }
-// }
-
-// @media (max-width: 992px) {
-//    .carousel {
-//       &__inner {
-//          width: 90%;
-
-//          position: relative;
-//          img {
-//             display: block;
-//             margin: 0 auto;
-//          }
-   
-//       }
-// }
-// }
-
 .carousel {
    padding: 81px 0;
    &__inner {
       width: 750px;
       margin: 0 auto;
-
+      position: relative;
+   }
+   &__btn-next {
+      img{
+      position: absolute;
+      right: -66px;
+      bottom: 50%;
+      transform: rotateY(-50%);
+      z-index: 10;
+   }
+   }
+   &__btn-prev  {
+         img{
+         position: absolute;
+         left: -66px;
+         bottom: 50%;
+         transform: rotateY(-50%);
+         z-index: 10;
+      }
+   } 
+   .carousel__dots {
+      position: relative;
+      top: 12px;
+      .carousel__dot-item {
+         width: 10px;
+         height: 10px;
+         text-align: center;
+         line-height: 20px;
+         font-size: 12px;
+         color: #000;
+         opacity: 1;
+         background: rgba(0, 0, 0, 0.8);
+       }
+       .swiper-pagination-bullet-active {
+         background: red;
+         border: 1px solid #000
+       }
    }
 }
+
+@media (max-width: 992px) {
+   .carousel {
+      &__inner {
+         width: 70%;
+      }
+}
+}
+
+@media (max-width: 768px) {
+   .carousel {
+      .carousel {
+         &__inner {
+            width: 80%;
+         }
+   }
+      &__btn-next, &__btn-prev{ 
+         display: none;
+      }
+   
+      }
+}
+
+@media (min-width: 768px) {
+   .carousel {
+      &__dots{
+         display: none;
+      }
+   }
+}
+
+
 
