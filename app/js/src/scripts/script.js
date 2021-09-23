@@ -1,6 +1,8 @@
 const swiper = new Swiper(".carousel__container", {
   autoHeight: true,
   spaceBetween: 20,
+  loop: true,
+  //   loopFillGroupWithBlank: true,
   pagination: {
     el: ".carousel__dots",
     bulletClass: "carousel__dot-item swiper-pagination-bullet",
