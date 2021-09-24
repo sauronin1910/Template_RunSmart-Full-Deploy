@@ -5,8 +5,6 @@ const swiper = new Swiper(".carousel__container", {
   pagination: {
     el: ".carousel__dots",
     bulletClass: "carousel__dot-item swiper-pagination-bullet",
-    bulletActiveClass: "swiper-pagination-bullet-active",
-    bulletElement: "span",
     clickable: true,
     dynamicBullets: true,
   },
