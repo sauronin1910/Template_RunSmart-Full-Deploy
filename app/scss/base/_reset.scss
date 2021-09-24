@@ -56,7 +56,7 @@ embed, iframe, img, legend, object, pre, details, figure, video, audio, picture 
 
 a {
   // background-color: transparent;
-  // text-decoration: unset;
+  text-decoration: none;
   // color: unset;
   
   &:active, &:focus, &:hover, &:visited {
