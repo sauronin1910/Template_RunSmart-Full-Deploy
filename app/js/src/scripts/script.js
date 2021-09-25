@@ -44,3 +44,38 @@ function onTabClick(item) {
     currentTab.classList.add("catalog__content_active");
   });
 }
+
+// const catalogBtn = document.querySelectorAll(".catalog-item__link");
+// const catalogBtnBack = document.querySelectorAll(".catalog-item__back");
+// const catItemCon = document.querySelectorAll(".catalog-item__content");
+// const cotItemList = document.querySelectorAll(".catalog-item__list");
+
+
+const content = document.querySelectorAll(".catalog-item__content");
+const list = document.querySelectorAll(".catalog-item__list");
+const btnLink = document.querySelectorAll(".catalog-item__link");
+const btnBack = document.querySelectorAll(".catalog-item__back");
+
+btnLink.forEach(function (item) {
+  item.addEventListener("click", function () {
+    list.forEach(function(item) {
+      item.classList.add("catalog-item__list_active");
+      content.forEach(function(item) {
+        item.classList.remove("catalog-item__content_active");
+      })
+    })
+  });
+});
+btnBack.forEach(function (item) {
+  item.addEventListener("click", function () {
+    list.forEach(function (item) {
+      item.classList.remove("catalog-item__list_active");
+    })
+    content.forEach(function(item) {
+      item.classList.add("catalog-item__content_active");
+    })
+  });
+})
+
+
+
