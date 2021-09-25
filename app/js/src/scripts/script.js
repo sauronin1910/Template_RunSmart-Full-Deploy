@@ -45,6 +45,22 @@ function onTabClick(item) {
   });
 }
 
+const link = document.querySelectorAll('.catalog-item__link')
+const black = document.querySelectorAll('.catalog-item__back')
+
+link.forEach(function(item){
+  item.onclick = function (evt) {
+    evt.preventDefault();
+  }
+})
+black.forEach(function(item){
+  item.onclick = function (evt) {
+    evt.preventDefault();
+  }
+})
+
+
+
 // const catalogBtn = document.querySelectorAll(".catalog-item__link");
 // const catalogBtnBack = document.querySelectorAll(".catalog-item__back");
 // const catItemCon = document.querySelectorAll(".catalog-item__content");
