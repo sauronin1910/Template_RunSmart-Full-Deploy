@@ -29,12 +29,14 @@ tabsCatalog.forEach(function (item) {
     let tabId = currentCat.getAttribute("data-tab");
     let currentTab = document.querySelector(tabId);
 
-    tabsCatalog.forEach(function (item) {
-      item.classList.remove("catalog__tab_active");
-    });
-    tabsContent.forEach(function (item) {
-      item.classList.remove("catalog__content_active");
-    });
+    if (!currentCat.classList.contains("catalog__tab_active")) {
+      tabsCatalog.forEach(function (item) {
+        item.classList.remove("catalog__tab_active");
+      });
+      tabsContent.forEach(function (item) {
+        item.classList.remove("catalog__content_active");
+      });
+    }
 
     currentCat.classList.add("catalog__tab_active");
     currentTab.classList.add("catalog__content_active");
