@@ -23,7 +23,9 @@ const swiper = new Swiper(".carousel__container", {
 const tabsCatalog = document.querySelectorAll(".catalog__tab");
 const tabsContent = document.querySelectorAll(".catalog__content");
 
-tabsCatalog.forEach(function (item) {
+tabsCatalog.forEach(onTabClick);
+
+function onTabClick(item) {
   item.addEventListener("click", function () {
     let currentCat = item;
     let tabId = currentCat.getAttribute("data-tab");
@@ -41,4 +43,4 @@ tabsCatalog.forEach(function (item) {
     currentCat.classList.add("catalog__tab_active");
     currentTab.classList.add("catalog__content_active");
   });
-});
+}
