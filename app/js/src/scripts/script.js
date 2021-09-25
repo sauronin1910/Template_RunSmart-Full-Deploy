@@ -19,23 +19,24 @@ const swiper = new Swiper(".carousel__container", {
   },
 });
 
-$(function() {
-  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-    $(this)
-      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-      .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-  });
-  
-function toggleSlide(item) {
-  $(item).each(function(i) {
-    $(this).on("click", function(e) {
-      e.preventDefault();
-      $(".catalog-item__content ").eq(i).toggleClass("catalog-item__content_active");
-      $(".catalog-item__list ").eq(i).toggleClass("catalog-item__list_active")
-    })
-  });
-};
-  toggleSlide(".catalog-item__link");
-  toggleSlide(".catalog-item__back");
+// tabs
+const tabsCatalog = document.querySelectorAll(".catalog__tab");
+const tabsContent = document.querySelectorAll(".catalog__content");
 
+tabsCatalog.forEach(function (item) {
+  item.addEventListener("click", function () {
+    let currentCat = item;
+    let tabId = currentCat.getAttribute("data-tab");
+    let currentTab = document.querySelector(tabId);
+
+    tabsCatalog.forEach(function (item) {
+      item.classList.remove("catalog__tab_active");
+    });
+    tabsContent.forEach(function (item) {
+      item.classList.remove("catalog__content_active");
+    });
+
+    currentCat.classList.add("catalog__tab_active");
+    currentTab.classList.add("catalog__content_active");
+  });
 });
