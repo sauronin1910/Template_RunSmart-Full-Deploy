@@ -23,6 +23,11 @@ const swiper = new Swiper(".carousel__container", {
 const tabsCatalog = document.querySelectorAll(".catalog__tab");
 const tabsContent = document.querySelectorAll(".catalog__content");
 
+const content = document.querySelectorAll(".catalog-item__content");
+const list = document.querySelectorAll(".catalog-item__list");
+const btnLink = document.querySelectorAll('.catalog-item__link');
+const btnBack = document.querySelectorAll('.catalog-item__back');
+
 tabsCatalog.forEach(onTabClick);
 
 function onTabClick(item) {
@@ -45,32 +50,19 @@ function onTabClick(item) {
   });
 }
 
-const link = document.querySelectorAll('.catalog-item__link')
-const black = document.querySelectorAll('.catalog-item__back')
+btnLink.forEach(stopAction);
+btnBack.forEach(stopAction);
 
-link.forEach(function(item){
-  item.onclick = function (evt) {
+function stopAction(item) {
+  item.onclick = function(evt) {
     evt.preventDefault();
   }
-})
-black.forEach(function(item){
-  item.onclick = function (evt) {
-    evt.preventDefault();
-  }
-})
+};
 
 
 
-// const catalogBtn = document.querySelectorAll(".catalog-item__link");
-// const catalogBtnBack = document.querySelectorAll(".catalog-item__back");
-// const catItemCon = document.querySelectorAll(".catalog-item__content");
-// const cotItemList = document.querySelectorAll(".catalog-item__list");
-
-
-const content = document.querySelectorAll(".catalog-item__content");
-const list = document.querySelectorAll(".catalog-item__list");
-const btnLink = document.querySelectorAll(".catalog-item__link");
-const btnBack = document.querySelectorAll(".catalog-item__back");
+// const content = document.querySelectorAll(".catalog-item__content");
+// const list = document.querySelectorAll(".catalog-item__list");
 
 btnLink.forEach(function (item) {
   item.addEventListener("click", function () {
@@ -91,7 +83,19 @@ btnBack.forEach(function (item) {
       item.classList.add("catalog-item__content_active");
     })
   });
-})
+});
 
+// const content = document.querySelectorAll(".catalog-item__content");
+// const list = document.querySelectorAll(".catalog-item__list");
+// const btnLink = document.querySelectorAll(".catalog-item__link");
+// const btnBack = document.querySelectorAll(".catalog-item__back");
 
+// const catalogItems = document.querySelectorAll('.catalog-item');
 
+// catalogItems.forEach(item => {
+
+//   const btn = item.querySelector('.link')
+//   btn.addEventListener("click", function() {
+//     item.addEventListener.classList("catalog-item__list_active ")
+//   })
+// })
