@@ -23,8 +23,6 @@ const swiper = new Swiper(".carousel__container", {
 const tabsCatalog = document.querySelectorAll(".catalog__tab");
 const tabsContent = document.querySelectorAll(".catalog__content");
 
-
-
 tabsCatalog.forEach(onTabClick);
 
 function onTabClick(item) {
@@ -48,35 +46,36 @@ function onTabClick(item) {
 }
 
 
-const content = document.querySelectorAll(".catalog-item__content");
-const list = document.querySelectorAll(".catalog-item__list");
-const btnLink = document.querySelectorAll('.catalog-item__link');
-const btnBack = document.querySelectorAll('.catalog-item__back');
+// const content = document.querySelectorAll(".catalog-item__content");
+// const list = document.querySelectorAll(".catalog-item__list");
+// const btnLink = document.querySelectorAll('.catalog-item__link');
+// const btnBack = document.querySelectorAll('.catalog-item__back');
 
 
 
-function stopAction(item) {
-  item.onclick = function(evt) {
-    evt.preventDefault();
-  }
-};
-btnLink.forEach(stopAction);
-btnBack.forEach(stopAction);
+// function stopAction(item) {
+//   item.onclick = function(evt) {
+//     evt.preventDefault();
+//   }
+// };
+// btnLink.forEach(stopAction);
+// btnBack.forEach(stopAction);
 
 
-btnLink.forEach(btn);
-btnBack.forEach(btn);
+// btnLink.forEach(btn);
+// btnBack.forEach(btn);
 
-function btn(item) {
-item.addEventListener("click", function () {
-function contentList(item) {
-      item.classList.toggle("catalog-item__list_active");
-      item.classList.toggle("catalog-item__content_active");
-    }
-    list.forEach(contentList);
-    content.forEach(contentList);
-});
-}
+// function btn(item) {
+// item.addEventListener("click", function () {
+// function contentList(item) {
+//       item.classList.toggle("catalog-item__list_active");
+//       item.classList.toggle("catalog-item__content_active");
+//     }
+//     list.forEach(contentList);
+//     content.forEach(contentList);
+// });
+// }
+
 
 // btnLink.forEach(function (item) {
 //   item.addEventListener("click", function () {
@@ -101,5 +100,44 @@ function contentList(item) {
 
 
 //////////////////////////////////////////////////////
+const contents = document.querySelector(".catalog-item__content");
+const lists = document.querySelector(".catalog-item__list");
+const btnLink = document.querySelectorAll('.catalog-item__link');
+const btnBack = document.querySelectorAll('.catalog-item__back');
+
+
+
+function stopAction(item) {
+  item.onclick = function(evt) {
+    evt.preventDefault();
+  }
+};
+btnLink.forEach(stopAction);
+btnBack.forEach(stopAction);
+
+
+btnLink.forEach(btn);
+btnBack.forEach(btn);
+
+function btn(item) {
+item.addEventListener("click", function () {
+
+  // const contents = document.querySelectorAll(".catalog-item__content");
+  // const lists = document.querySelectorAll(".catalog-item__list");
+function elemLists(item){
+  item.classList.toggle("catalog-item__list_active");
+  item.classList.toggle("catalog-item__content_active");
+}
+
+elemLists(item);
+
+// item.classList.toggle("catalog-item__list_active");
+// item.classList.toggle("catalog-item__content_active");
+
+
+    // list.forEach(contentList);
+    // content.forEach(contentList);
+});
+}
 
 
