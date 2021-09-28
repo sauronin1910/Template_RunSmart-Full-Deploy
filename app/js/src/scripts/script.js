@@ -48,6 +48,7 @@ function onTabClick(item) {
     currentTab.classList.add("catalog__content_active");
   });
 }
+//////////////////// Create Parent to native JS
 
 Element.prototype.parents = function (selector) {
   var elements = [];
@@ -66,8 +67,10 @@ Element.prototype.parents = function (selector) {
 
   return elements;
 };
+btnLink.forEach(btnClick);
+btnBack.forEach(btnClick);
 
-btnLink.forEach(function (btn) {
+function btnClick(btn){
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -80,18 +83,5 @@ btnLink.forEach(function (btn) {
     catalogItemList.classList.toggle("catalog-item__list_active");
     catalogItemContent.classList.toggle("catalog-item__list_active");
   });
-});
-btnBack.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
+};
 
-    const catalogItem = btn.parents(".catalog-item")[0];
-    const catalogItemList = catalogItem.querySelector(".catalog-item__list");
-    const catalogItemContent = catalogItem.querySelector(
-      ".catalog-item__content"
-    );
-
-    catalogItemList.classList.toggle("catalog-item__list_active");
-    catalogItemContent.classList.toggle("catalog-item__list_active");
-  });
-});
