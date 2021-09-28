@@ -46,35 +46,29 @@ function onTabClick(item) {
 }
 
 
-// const content = document.querySelectorAll(".catalog-item__content");
-// const list = document.querySelectorAll(".catalog-item__list");
-// const btnLink = document.querySelectorAll('.catalog-item__link');
-// const btnBack = document.querySelectorAll('.catalog-item__back');
+const content = document.querySelectorAll(".catalog-item__content");
+const list = document.querySelectorAll(".catalog-item__list");
+const btnLink = document.querySelectorAll('.catalog-item__link');
+const btnBack = document.querySelectorAll('.catalog-item__back');
 
 
 
-// function stopAction(item) {
-//   item.onclick = function(evt) {
-//     evt.preventDefault();
-//   }
-// };
-// btnLink.forEach(stopAction);
-// btnBack.forEach(stopAction);
+btnLink.forEach(function(btn) {
+  btn.addEventListener("click", function(e){
+    e.preventDefault()
 
 
-// btnLink.forEach(btn);
-// btnBack.forEach(btn);
+     $(btn).parents('.catalog-item')
 
-// function btn(item) {
-// item.addEventListener("click", function () {
-// function contentList(item) {
-//       item.classList.toggle("catalog-item__list_active");
-//       item.classList.toggle("catalog-item__content_active");
-//     }
-//     list.forEach(contentList);
-//     content.forEach(contentList);
-// });
-// }
+
+
+
+  })
+})
+
+
+
+
 
 
 // btnLink.forEach(function (item) {
@@ -100,44 +94,72 @@ function onTabClick(item) {
 
 
 //////////////////////////////////////////////////////
-const contents = document.querySelector(".catalog-item__content");
-const lists = document.querySelector(".catalog-item__list");
-const btnLink = document.querySelectorAll('.catalog-item__link');
-const btnBack = document.querySelectorAll('.catalog-item__back');
+
+// const content = document.querySelectorAll(".catalog-item__content");
+// const list = document.querySelectorAll(".catalog+-item__list");
+// const btnLink = document.querySelectorAll('.catalog-item__link');
+// const btnBack = document.querySelectorAll('.catalog-item__back');
 
 
 
-function stopAction(item) {
-  item.onclick = function(evt) {
-    evt.preventDefault();
-  }
-};
-btnLink.forEach(stopAction);
-btnBack.forEach(stopAction);
+// function stopAction(item) {
+//   item.onclick = function(evt) {
+//     evt.preventDefault();
+//   }
+// };
+// btnLink.forEach(stopAction);
+// btnBack.forEach(stopAction);
 
 
-btnLink.forEach(btn);
-btnBack.forEach(btn);
 
-function btn(item) {
-item.addEventListener("click", function () {
-
-  // const contents = document.querySelectorAll(".catalog-item__content");
-  // const lists = document.querySelectorAll(".catalog-item__list");
-function elemLists(item){
-  item.classList.toggle("catalog-item__list_active");
-  item.classList.toggle("catalog-item__content_active");
-}
-
-elemLists(item);
-
-// item.classList.toggle("catalog-item__list_active");
-// item.classList.toggle("catalog-item__content_active");
+// // var header = document.getElementById("myDIV");
+// // var btns = header.getElementsByClassName("btn");
 
 
-    // list.forEach(contentList);
-    // content.forEach(contentList);
-});
-}
+
+// for (var i = 0; i < btnLink.length; i++) {
+//   btnLink[i].addEventListener("click", function() {
+//     // var current = document.getElementsByClassName("active");
+//     const  list = document.querySelectorAll(".catalog-item__list_active");
+//     const content = document.querySelectorAll(".catalog-item__content");
+//     list.classList.toggle("catalog-item__list_active");
+//     content.classList.toggle("catalog-item__content_active");
+//     // list[0].className = list[0].className.replace(" catalog-item__list_active", "");
+//     // this.className += " catalog-item__list_active";
+//   });
+// }
 
 
+// btnLink.onclick = btn();
+// btnBack.onclick = btn();
+
+
+// function btn() {
+//   btn.addEventListener("click", function() {
+//     const content = document.querySelectorAll(".catalog-item__content");
+// const list = document.querySelectorAll(".catalog-item__list");
+//     for(let i = 0; i < list.length; i++) {
+//       list[i].classList.toggle("catalog-item__list_active")
+//       content[i].classList.toggle("catalog-item__content_active");
+//     };
+
+//   })
+// }
+
+
+// function btn(item) {
+// item.addEventListener("click", function () {
+
+
+
+// // function contentList(item) {
+// //       item.classList.toggle("catalog-item__list_active");
+// //       item.classList.toggle("catalog-item__content_active");
+// //     }
+// //     list.forEach(contentList);
+// //     content.forEach(contentList);
+
+
+// // }
+// // );
+// }
