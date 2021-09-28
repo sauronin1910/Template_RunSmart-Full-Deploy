@@ -19,7 +19,7 @@
       margin: 0 5px;
       cursor: pointer;
       transition: 0.3s all;
-      
+
       &:hover {
          box-shadow: 3px 3px 20px $main-color;
          border: none;
@@ -129,7 +129,7 @@
          transition: 0.3s all;
          position: relative;
          &_active {
-            transform: translateX(-100%);
+            transform: translateX(-105%);
             margin-left: 0;
          }
          li {
@@ -151,7 +151,7 @@
             }
          }
       }
-   
+
       .catalog-item__back {
          position: absolute;
          bottom: 0;
@@ -184,7 +184,7 @@
    .catalog {
       &__tabs {
          flex-direction: column;
-       
+
       }
       &__tab {
          margin-top: 20px;

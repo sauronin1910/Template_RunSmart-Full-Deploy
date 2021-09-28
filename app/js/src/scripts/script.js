@@ -22,6 +22,10 @@ const swiper = new Swiper(".carousel__container", {
 // tabs
 const tabsCatalog = document.querySelectorAll(".catalog__tab");
 const tabsContent = document.querySelectorAll(".catalog__content");
+const content = document.querySelectorAll(".catalog-item__content");
+const list = document.querySelectorAll(".catalog-item__list");
+const btnLink = document.querySelectorAll(".catalog-item__link");
+const btnBack = document.querySelectorAll(".catalog-item__back");
 
 tabsCatalog.forEach(onTabClick);
 
@@ -45,121 +49,49 @@ function onTabClick(item) {
   });
 }
 
+Element.prototype.parents = function (selector) {
+  var elements = [];
+  var elem = this;
+  var ishaveselector = selector !== undefined;
 
-const content = document.querySelectorAll(".catalog-item__content");
-const list = document.querySelectorAll(".catalog-item__list");
-const btnLink = document.querySelectorAll('.catalog-item__link');
-const btnBack = document.querySelectorAll('.catalog-item__back');
+  while ((elem = elem.parentElement) !== null) {
+    if (elem.nodeType !== Node.ELEMENT_NODE) {
+      continue;
+    }
 
+    if (!ishaveselector || elem.matches(selector)) {
+      elements.push(elem);
+    }
+  }
 
+  return elements;
+};
 
-btnLink.forEach(function(btn) {
-  btn.addEventListener("click", function(e){
-    e.preventDefault()
+btnLink.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const catalogItem = btn.parents(".catalog-item")[0];
+    const catalogItemList = catalogItem.querySelector(".catalog-item__list");
+    const catalogItemContent = catalogItem.querySelector(
+      ".catalog-item__content"
+    );
 
-     $(btn).parents('.catalog-item')
+    catalogItemList.classList.toggle("catalog-item__list_active");
+    catalogItemContent.classList.toggle("catalog-item__list_active");
+  });
+});
+btnBack.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const catalogItem = btn.parents(".catalog-item")[0];
+    const catalogItemList = catalogItem.querySelector(".catalog-item__list");
+    const catalogItemContent = catalogItem.querySelector(
+      ".catalog-item__content"
+    );
 
-
-
-  })
-})
-
-
-
-
-
-
-// btnLink.forEach(function (item) {
-//   item.addEventListener("click", function () {
-//     list.forEach(function(item) {
-//       item.classList.add("catalog-item__list_active");
-//       content.forEach(function(item) {
-//         item.classList.remove("catalog-item__content_active");
-//       })
-//     })
-//   });
-// });
-// btnBack.forEach(function (item) {
-//   item.addEventListener("click", function () {
-//     list.forEach(function (item) {
-//       item.classList.remove("catalog-item__list_active");
-//     })
-//     content.forEach(function(item) {
-//       item.classList.add("catalog-item__content_active");
-//     })
-//   });
-// });
-
-
-//////////////////////////////////////////////////////
-
-// const content = document.querySelectorAll(".catalog-item__content");
-// const list = document.querySelectorAll(".catalog+-item__list");
-// const btnLink = document.querySelectorAll('.catalog-item__link');
-// const btnBack = document.querySelectorAll('.catalog-item__back');
-
-
-
-// function stopAction(item) {
-//   item.onclick = function(evt) {
-//     evt.preventDefault();
-//   }
-// };
-// btnLink.forEach(stopAction);
-// btnBack.forEach(stopAction);
-
-
-
-// // var header = document.getElementById("myDIV");
-// // var btns = header.getElementsByClassName("btn");
-
-
-
-// for (var i = 0; i < btnLink.length; i++) {
-//   btnLink[i].addEventListener("click", function() {
-//     // var current = document.getElementsByClassName("active");
-//     const  list = document.querySelectorAll(".catalog-item__list_active");
-//     const content = document.querySelectorAll(".catalog-item__content");
-//     list.classList.toggle("catalog-item__list_active");
-//     content.classList.toggle("catalog-item__content_active");
-//     // list[0].className = list[0].className.replace(" catalog-item__list_active", "");
-//     // this.className += " catalog-item__list_active";
-//   });
-// }
-
-
-// btnLink.onclick = btn();
-// btnBack.onclick = btn();
-
-
-// function btn() {
-//   btn.addEventListener("click", function() {
-//     const content = document.querySelectorAll(".catalog-item__content");
-// const list = document.querySelectorAll(".catalog-item__list");
-//     for(let i = 0; i < list.length; i++) {
-//       list[i].classList.toggle("catalog-item__list_active")
-//       content[i].classList.toggle("catalog-item__content_active");
-//     };
-
-//   })
-// }
-
-
-// function btn(item) {
-// item.addEventListener("click", function () {
-
-
-
-// // function contentList(item) {
-// //       item.classList.toggle("catalog-item__list_active");
-// //       item.classList.toggle("catalog-item__content_active");
-// //     }
-// //     list.forEach(contentList);
-// //     content.forEach(contentList);
-
-
-// // }
-// // );
-// }
+    catalogItemList.classList.toggle("catalog-item__list_active");
+    catalogItemContent.classList.toggle("catalog-item__list_active");
+  });
+});
