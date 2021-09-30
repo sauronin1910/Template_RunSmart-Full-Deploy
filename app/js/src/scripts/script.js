@@ -1,17 +1,48 @@
 // modal
-$(document).ready(function(){
-  $("[data-modal=consultation]").on("click", function() {
+$(document).ready(function () {
+  $("[data-modal=consultation]").on("click", function () {
     $(".overlay, #consultation").fadeIn("medium");
   });
-  $(".modal__close").on("click", function() {
+  $(".modal__close").on("click", function () {
     $(".overlay, #consultation, #order, #thanks").fadeOut("medium");
   });
-  $(".button_mini").each(function(i){
-    $(this).on("click", function(){
+  $(".button_mini").each(function (i) {
+    $(this).on("click", function () {
       $("#order .modal__descr").text($(".catalog-item__subtitle").eq(i).text());
       $(".overlay, #order").fadeIn("medium");
-    })
+    });
   });
+
+  // validate
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: "required",
+        email: {
+          required: true,
+          email: true,
+        },
+      },
+      messages: {
+        name: {
+          required: "Пожайлуста введите свое имья",
+          minlength: jQuery.validator.format("Введите {0} символа!")
+        },
+        phone: "Пожайлуста введите свой номер телефон",
+        email: {
+          required: "Пожайлуста введите свою почту",
+          email: "Неправильно введен адрес почты",
+        },
+      },
+    });
+  };
+  validateForms("#consultation-form");
+  validateForms("#consultation form");
+  validateForms("#order form");
 });
 
 // const { on } = require("npm");
@@ -88,7 +119,7 @@ Element.prototype.parents = function (selector) {
 btnLink.forEach(btnClick);
 btnBack.forEach(btnClick);
 
-function btnClick(btn){
+function btnClick(btn) {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -101,5 +132,4 @@ function btnClick(btn){
     catalogItemList.classList.toggle("catalog-item__list_active");
     catalogItemContent.classList.toggle("catalog-item__list_active");
   });
-};
-
+}
