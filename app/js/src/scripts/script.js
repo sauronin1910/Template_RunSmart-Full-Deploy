@@ -1,3 +1,21 @@
+// modal
+$(document).ready(function(){
+  $("[data-modal=consultation]").on("click", function() {
+    $(".overlay, #consultation").fadeIn("medium");
+  });
+  $(".modal__close").on("click", function() {
+    $(".overlay, #consultation, #order, #thanks").fadeOut("medium");
+  });
+  $(".button_mini").each(function(i){
+    $(this).on("click", function(){
+      $("#order .modal__descr").text($(".catalog-item__subtitle").eq(i).text());
+      $(".overlay, #order").fadeIn("medium");
+    })
+  });
+});
+
+// const { on } = require("npm");
+
 const swiper = new Swiper(".carousel__container", {
   // autoHeight: true,
   spaceBetween: 20,

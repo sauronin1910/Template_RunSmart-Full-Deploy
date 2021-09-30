@@ -45,16 +45,20 @@
    }
 }
 @media (max-width: 575px) {
-   .button{
+   .button {
       margin: 0 auto;
       margin-top: 10px;
       width: 70%;
       &_main {
          width: 70%;
          margin-top: 34px;
+
+
       }
-       &_submit {
-           width: 90%;
-       }
+      &_submit {
+         width: 90%;
+         font-size: 12px;
+
+     }
    }
 }
