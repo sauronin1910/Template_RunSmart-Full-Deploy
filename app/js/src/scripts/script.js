@@ -19,7 +19,7 @@ $(document).ready(function () {
       rules: {
         name: {
           required: true,
-          minlength: 2
+          minlength: 2,
         },
         phone: "required",
         email: {
@@ -30,7 +30,7 @@ $(document).ready(function () {
       messages: {
         name: {
           required: "Пожайлуста введите свое имья",
-          minlength: jQuery.validator.format("Введите {0} символа!")
+          minlength: jQuery.validator.format("Введите {0} символа!"),
         },
         phone: "Пожайлуста введите свой номер телефон",
         email: {
@@ -39,12 +39,27 @@ $(document).ready(function () {
         },
       },
     });
-  };
+  }
   validateForms("#consultation-form");
   validateForms("#consultation form");
   validateForms("#order form");
 
   $("input[name=phone]").mask("+3(999) 999-9999");
+
+  $("form").submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(this).find("input").val("");
+
+      $("form").trigger("reset");
+
+    });
+    return false;
+  });
 });
 
 // const { on } = require("npm");
