@@ -5,6 +5,7 @@
 
 * {
    font-family: 'MuseoModerno', cursive;
+   // background-color: black;
 }
 
 .container {
@@ -37,6 +38,8 @@
 @import "blocks/footer";
 //Modal
 @import "blocks/modal";
+// pageUp
+@import "blocks/pageup";
 
 
 

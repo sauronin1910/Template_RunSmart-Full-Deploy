@@ -56,10 +56,25 @@ $(document).ready(function () {
       $(this).find("input").val("");
 
       $("form").trigger("reset");
-
     });
     return false;
   });
+
+  // Smooth scroll and page up
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 1600) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+
+  $("a[href^='#'").click(function(){
+    let _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+  })
 });
 
 // const { on } = require("npm");
@@ -150,3 +165,20 @@ function btnClick(btn) {
     catalogItemContent.classList.toggle("catalog-item__list_active");
   });
 }
+
+///////////////// Smooth Scroll on native JS
+
+// const anchors = document.querySelectorAll('a[href*="#"]')
+
+// for (let anchor of anchors) {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault()
+
+//     const blockID = anchor.getAttribute('href').substr(1)
+
+//     document.getElementById(blockID).scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start'
+//     })
+//   })
+// }
