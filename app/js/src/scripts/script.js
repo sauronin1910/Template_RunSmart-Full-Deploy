@@ -166,6 +166,9 @@ function btnClick(btn) {
   });
 }
 
+// wow.js
+new WOW().init();
+
 ///////////////// Smooth Scroll on native JS
 
 // const anchors = document.querySelectorAll('a[href*="#"]')
