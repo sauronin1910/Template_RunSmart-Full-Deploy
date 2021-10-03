@@ -1,0 +1,59 @@
+@keyframes timerroteta {
+   0% {
+      transform: rotate(0deg);
+   }
+   10% {
+      transform: rotate(20deg);
+   }
+   20% {
+      transform: rotate(40deg);
+   }
+   30% {
+      transform: rotate(60deg);
+   }
+   40% {
+      transform: rotate(80deg);
+   }
+   50% {
+      transform: rotate(100deg);
+   }
+   60% {
+      transform: rotate(120deg);
+   }
+   70% {
+      transform: rotate(140deg);
+   }
+   80% {
+      transform: rotate(160deg);
+   }
+   90% {
+      transform: rotate(180deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+@keyframes fly {
+   from {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(10px)
+   }
+   to {
+      transform: translateY(0);
+   }
+}
+@keyframes heartbeat {
+   from  {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+   to {
+      transform: scale(1);
+
+      }
+ }

@@ -9,7 +9,7 @@
       margin-top: 71px;
    }
    &__header {
-      margin: 17px 0 0 0;  
+      margin: 17px 0 0 0;
       font-weight: 700;
       font-size: 42px;
       line-height: 42px;
@@ -38,8 +38,21 @@
       font-weight: 500;
       font-size: 14px;
       text-align: center;
-
       color: #FFFFFF;
+      &_animate {
+         animation: fly 1.5s ease infinite;
+         &:hover {
+            animation: paused;
+         }
+
+      }
+      &_animated {
+         animation: timerroteta 2s ease infinite;
+         &:hover {
+            animation: paused;
+         }
+      }
+
       img {
          display: block;
          margin: 0 auto;
@@ -102,7 +115,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
    }
    &__icon {
       margin-top: 15px;
